@@ -1,0 +1,9 @@
+CREATE DATABASE CatalogoJogos;
+USE CatalogoJogos;
+CREATE TABLE Jogos(
+    Id UNIQUEIDENTIFIER,
+    Nome VARCHAR(100) NOT NULL,
+    Produtora VARCHAR(100) NOT NULL,
+    Preco FLOAT(53) NOT NULL,
+	PRIMARY KEY (Id)
+);

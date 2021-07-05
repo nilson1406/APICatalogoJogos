@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APICatalogoJogos</name>
+    </assembly>
+    <members>
+        <member name="M:APICatalogoJogos.Controllers.V1.JogosController.Obter(System.Int32,System.Int32)">
+            <summary>
+            Buscar todos os jogos de forma paginada
+            </summary>
+            <remarks>
+            Não é possível retornar os jogos sem paginação
+            </remarks>
+            <param name="pagina">Indica qual página está sendo consultada, Mínimo 1</param>
+            <param name="quantidade">Indica a quantidade de registros por página. Mínimo 1 e mácimo 50</param>
+            <response code="200">Retorna a lista de jogos</response>
+            <response code="204">Caso não haja jogos</response>
+        </member>
+        <member name="M:APICatalogoJogos.Controllers.V1.JogosController.Obter(System.Guid)">
+            <summary>
+            Buscar um jogo pelo seu id
+            </summary>
+            <param name="idJogo">Id do Jogo buscado</param>
+            <response code="200">Retorna o jogo filtrado</response>
+            <response code="204">Caso não haja jogo com este id</response>
+        </member>
+        <member name="M:APICatalogoJogos.Controllers.V1.JogosController.InserirJogo(APICatalogoJogos.InputModel.JogoInputModel)">
+            <summary>
+            Insere um novo jogo
+            </summary>
+            <param name="jogoInputModel">Model contendo os dados do jogo a ser cadastrado</param>
+            <response code="200">Retorna o jogo cadastrado</response>
+            <response code="400">Caso já existe jogo com estes dados</response>
+        </member>
+        <member name="M:APICatalogoJogos.Controllers.V1.JogosController.AtualizarJogo(System.Guid,APICatalogoJogos.InputModel.JogoInputModel)">
+            <summary>
+            Atualiza dados de um jogo
+            </summary>
+            <param name="idJogo">Id do jogo a ser atualizado</param>
+            <param name="jogoInputModel">Model contendo os dados do jogo a ser cadastrado</param>
+            <response code="200">Retorna sucesso</response>
+            <response code="400">Caso o jogo não exista</response>
+        </member>
+        <member name="M:APICatalogoJogos.Controllers.V1.JogosController.AtualizarJogo(System.Guid,System.Double)">
+            <summary>
+            Atualiza o preço do jogo
+            </summary>
+            <param name="idJogo">Id do jogo a ser atualizado</param>
+            <param name="preco">Novo preço</param>
+            <response code="200">Retorna sucesso</response>
+            <response code="400">Caso o jogo não exista</response>
+        </member>
+        <member name="M:APICatalogoJogos.Controllers.V1.JogosController.ApagarJogo(System.Guid)">
+            <summary>
+            Apaga o jogo solicitado
+            </summary>
+            <param name="idJogo">Id do jogo a ser excluído</param>
+            <response code="200">Retorna sucesso</response>
+            <response code="400">Caso o jogo não exista</response>
+        </member>
+    </members>
+</doc>
